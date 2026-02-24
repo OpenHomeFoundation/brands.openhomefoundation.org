@@ -21,11 +21,6 @@ export default defineConfig({
       title: siteConfig.title,
       description: siteConfig.description,
       titleDelimiter: "-",
-      editLink: isProduction
-        ? {
-            baseUrl: `${siteConfig.github}/edit/main/`,
-          }
-        : {},
       logo: {
         light: "./src/assets/logo--dark.svg",
         dark: "./src/assets/logo--light.svg",
