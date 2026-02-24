@@ -2,7 +2,6 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 
-import starlightBlog from "starlight-blog";
 import { remarkAlert } from "remark-github-blockquote-alert";
 
 import { siteConfig } from "./src/site.config.ts";
@@ -100,35 +99,31 @@ export default defineConfig({
           },
         },
       ],
-      plugins: [
-        starlightBlog({
-          title: "Blog",
-          prefix: "blog",
-          postCount: 10,
-          recentPostCount: 5,
-          authors: {
-            "author_name (key)": {
-              name: "xxx (Full name - appears on blog posts)",
-              title: "xxx (Role)",
-              picture:
-                "https://avatars.githubusercontent.com/[GITHUB_USERNAME]?size=64",
-              url: "https://github.com/OpenHomeFoundation (GitHub profile URL)",
-            },
-          },
-        }),
-      ],
       customCss: ["./src/styles/custom.css"],
       sidebar: [
         {
           label: "Guides",
-          items: [
-            // Each item here is one entry in the navigation menu.
-            { label: "Example Guide", slug: "guides/example" },
-          ],
+          autogenerate: { directory: "guides" },
         },
         {
-          label: "Reference",
-          autogenerate: { directory: "reference" },
+          label: "Open Home Foundation",
+          autogenerate: { directory: "open-home-foundation" },
+          collapsed: true,
+        },
+        {
+          label: "Home Assistant",
+          autogenerate: { directory: "home-assistant" },
+          collapsed: true,
+        },
+        {
+          label: "Music Assistant",
+          autogenerate: { directory: "music-assistant" },
+          collapsed: true,
+        },
+        {
+          label: "ESPHome",
+          autogenerate: { directory: "esphome" },
+          collapsed: true,
         },
       ],
       components: {
