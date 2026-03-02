@@ -103,22 +103,18 @@ export default defineConfig({
         {
           label: "Open Home Foundation",
           autogenerate: { directory: "open-home-foundation" },
-          collapsed: true,
         },
         {
           label: "Home Assistant",
           autogenerate: { directory: "home-assistant" },
-          collapsed: true,
         },
         {
           label: "Music Assistant",
           autogenerate: { directory: "music-assistant" },
-          collapsed: true,
         },
         {
           label: "ESPHome",
           autogenerate: { directory: "esphome" },
-          collapsed: true,
         },
       ],
       components: {
