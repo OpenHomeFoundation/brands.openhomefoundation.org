@@ -12,7 +12,7 @@ const { title, mode, svg, png, assetName } = Astro.props;
 
 <article class="card sl-flex">
   <div class={`card-asset ${mode ? `card-asset--${mode}` : ""}`}>
-    <img src={`/assets/${assetName}.svg`} alt="" class="inline" />
+    <img src={`/assets/${assetName}`} alt="" class="inline" />
   </div>
   <div class="card-content">
     <p class="title sl-flex">
@@ -72,7 +72,8 @@ const { title, mode, svg, png, assetName } = Astro.props;
       background-color: #fff;
     }
     .card-asset img {
-      max-width: 80%;
+      max-width: 100%;
+      margin: 0 auto;
     }
     .card-asset--dark {
       background-color: #000;
