@@ -12,7 +12,7 @@ const { title, mode, svg, png, assetName } = Astro.props;
 
 <article class="card sl-flex">
   <div class={`card-asset ${mode ? `card-asset--${mode}` : ""}`}>
-    <img src={`/assets/${assetName}`} alt="" class="inline" />
+    <img src={`${assetName}`} alt="" class="inline" />
   </div>
   <div class="card-content">
     <p class="title sl-flex">
