@@ -1,0 +1,155 @@
+---
+import { OHF_COLORS } from "../lib/colors";
+
+const colors = Object.entries(OHF_COLORS).map(([, value]) => ({
+  name: value.name,
+  hex: value.web.HEX,
+  hsl: value.web.HSL,
+  rgb: value.web.RGB,
+  cmyk: value.print.CMYK,
+  pantone: value.print.pantone,
+}));
+
+function isLight(rgb: [number, number, number]) {
+  const [r, g, b] = rgb;
+  return (r * 299 + g * 587 + b * 114) / 1000 > 128;
+}
+---
+
+<div class="not-content">
+<div class="palette-grid">
+  {
+    colors.map(({ name, hex, hsl, rgb, cmyk, pantone }) => {
+      const textClass = isLight(rgb) ? "dark-text" : "light-text";
+      return (
+        <div class="card" style={`background-color: ${hex};`}>
+          <p class={`card-name ${textClass}`}>{name}</p>
+          <dl class={`card-values ${textClass}`}>
+            <div>
+              <dt>HEX</dt>
+              <dd><button class="copy-btn" data-copy={hex}>{hex}</button></dd>
+            </div>
+            <div>
+              <dt>RGB</dt>
+              <dd><button class="copy-btn" data-copy={rgb.join(", ")}>{rgb.join(", ")}</button></dd>
+            </div>
+            <div>
+              <dt>HSL</dt>
+              <dd><button class="copy-btn" data-copy={`${hsl[0]}°, ${hsl[1]}%, ${hsl[2]}%`}>{hsl[0]}°, {hsl[1]}%, {hsl[2]}%</button></dd>
+            </div>
+            <div>
+              <dt>CMYK</dt>
+              <dd><button class="copy-btn" data-copy={cmyk.join(", ")}>{cmyk.join(", ")}</button></dd>
+            </div>
+            <div>
+              <dt>Pantone</dt>
+              <dd><button class="copy-btn" data-copy={pantone}>{pantone}</button></dd>
+            </div>
+          </dl>
+        </div>
+      );
+    })
+  }
+</div>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>(".copy-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      navigator.clipboard.writeText(btn.dataset.copy ?? "");
+      btn.classList.add("copied");
+      setTimeout(() => btn.classList.remove("copied"), 1500);
+    });
+  });
+</script>
+
+<style>
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-block: 1.5rem;
+  }
+
+  .card {
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .card-name {
+    font-weight: 700;
+    font-size: var(--sl-text-sm);
+    margin: 0;
+  }
+
+  .card-values {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    font-size: var(--sl-text-xs, 0.75rem);
+  }
+
+  .card-values div {
+    display: grid;
+    grid-template-columns: 3.5rem 1fr;
+    align-items: baseline;
+  }
+
+  .card-values dt {
+    font-weight: 600;
+  }
+
+  .card-values dd {
+    margin: 0;
+  }
+
+  .copy-btn {
+    all: unset;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    opacity: 0.85;
+  }
+
+  .copy-btn:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+
+  .copy-btn::after {
+    content: "";
+    display: inline-block;
+    width: 0.7em;
+    height: 0.7em;
+    flex-shrink: 0;
+    opacity: 0;
+    background-color: currentColor;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='9' y='9' width='13' height='13' rx='2'/%3E%3Cpath d='M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1'/%3E%3C/svg%3E");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+  }
+
+  .copy-btn:hover::after {
+    opacity: 1;
+  }
+
+  .copy-btn.copied::after {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+    opacity: 1;
+  }
+
+  .light-text {
+    color: #fff;
+  }
+
+  .dark-text {
+    color: #09203b;
+  }
+</style>
