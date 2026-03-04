@@ -97,8 +97,8 @@ export default defineConfig({
       customCss: ["./src/styles/custom.css"],
       sidebar: [
         {
-          label: "Guides",
-          autogenerate: { directory: "guides" },
+          label: "Overview",
+          autogenerate: { directory: "overview" },
         },
         {
           label: "Open Home Foundation",

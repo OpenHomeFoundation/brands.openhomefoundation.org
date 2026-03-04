@@ -1,0 +1,25 @@
+---
+title: Brand architecture
+---
+
+## Our projects
+
+These projects are the primary ways we bring our mission to life. They are the platforms our users interact with every day, and represent the core of our work:
+
+- **Home Assistant**: Gives users private, sustainable choice and control over their entire smart home.
+- **ESPHome**: Empowers makers to build and customize their own microcontroller-based smart home hardware.
+- **Music Assistant**: Seamlessly unifies and streams users’ music sources to a wide range of players.
+
+<img src="/public/assets/ohf-brands.png" alt="Example of brand logos by the Open Home Foundation" />
+
+## Home Assistant
+
+Home Assistant is an open source platform built to give you choice and control over your smart home, data, and wellbeing. It’s powered by a welcoming global community of users and developers, ensuring the platform is constantly evolving and improving. By keeping everything local and prioritizing privacy, Home Assistant offers a simple, powerful, and sustainable way to automate your home – now and in the future.
+
+## ESPHome
+
+ESPHome is the open source system that empowers makers and developers to build, install, and control custom smart home devices using microcontrollers (ESP8266, ESP32, and others). Utilizing simple, yet powerful, low-code configuration files, ESPHome delivers flexibility, local control, and efficiency for hardware projects, while ensuring deep compatibility with Home Assistant and other automation platforms.
+
+## Music Assistant
+
+Music Assistant is the open source music library manager built to seamlessly consolidate and stream all your offline and online music sources. It provides a simple, powerful interface for managing your entire collection and casting it to a wide range of supported players, making it the definitive, unified media solution when combined with Home Assistant.
