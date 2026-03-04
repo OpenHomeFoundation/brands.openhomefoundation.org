@@ -20,6 +20,7 @@
 				"vunguyentuan.vscode-css-variables",
 				"esbenp.prettier-vscode",
 				"yzhang.markdown-all-in-one",
+				"unifiedjs.vscode-mdx",
 				"davidanson.vscode-markdownlint",
 				"jock.svg"
 			],
