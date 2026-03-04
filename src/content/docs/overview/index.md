@@ -1,0 +1,27 @@
+---
+title: Introduction
+---
+
+Welcome! This toolkit is designed to help our partners create branded products and/or packaging and written content that connect instantly with our shared customers. By aligning our look and language, we’ll ensure our mission has maximum impact.
+
+Think of it as a recipe for making great content together!
+
+## Your path to quick approval
+
+All content featuring our branding requires final approval from the Open Home Foundation.
+
+How this toolkit helps this process:
+
+- **It guides your decisions**
+  - All the necessary choices (logo sizes, colors, messages) are already made for you.
+- **It prevents delays**
+  - By applying the visual guidelines you can avoid common mistakes that may prolong the approval process.
+- **It ensures consistency**
+  - By using the tone of voice table for written materials you can create messaging that hits the right note.
+
+The shared win: together, we help customers instantly recognize and trust our partnered branded products.
+The first step to doing this is to understand the driver behind all our decisions: the Open Home Foundation’s mission.
+
+## Legal
+
+xxx xxx xxx
