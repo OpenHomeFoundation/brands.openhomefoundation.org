@@ -1,0 +1,55 @@
+---
+interface Props {
+  asset: string;
+  assetAlt: string;
+}
+
+const { asset, assetAlt } = Astro.props;
+---
+
+<div class={`logo-anatomy`}>
+  <div class="logo-anatomy__image">
+    <img src={asset} alt={assetAlt} />
+  </div>
+  <div class="logo-anatomy__content">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .logo-anatomy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem 2rem;
+  }
+
+  .logo-anatomy + .logo-anatomy {
+    margin-top: 4rem;
+  }
+
+  .logo-anatomy__image {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo-anatomy__content {
+    margin-top: 0;
+  }
+
+  @media (min-width: 38rem) {
+    .logo-anatomy {
+      flex-direction: row-reverse;
+      align-items: center;
+    }
+
+    .logo-anatomy__image {
+      width: 25%;
+      aspect-ratio: 1/1;
+    }
+
+    .logo-anatomy__content {
+      width: 75%;
+    }
+  }
+</style>
