@@ -1,0 +1,25 @@
+---
+import { OHF_COLORS, type OHFColor } from "../lib/colors";
+import ColorCard from "./ColorCard.astro";
+
+export interface Props {
+  colors?: OHFColor[];
+}
+
+const { colors = Object.values(OHF_COLORS) } = Astro.props;
+---
+
+<div class="not-content">
+  <div class="palette-grid">
+    {colors.map((color) => <ColorCard color={color} />)}
+  </div>
+</div>
+
+<style>
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-block: 1.5rem;
+  }
+</style>
