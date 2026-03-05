@@ -2,22 +2,39 @@
 title: Logo
 ---
 
+import AssetCard from "../../../components/AssetCard.astro";
+import { CardGrid } from "@astrojs/starlight/components";
+
 ## Logo anatomy
 
 The Open Home Foundation is built up of 3 elements as described below.
 
-### House
+<CardGrid>
+  <AssetCard
+    title="House"
+    assetName="/assets/open-home-foundation/ohf-logo-anatomy-house.png"
+    class="basic"
+  >
+    We’re all about the home, so our logomark follows its form. As a structure with a pitched roof is commonly used to represent a house, there are vast amounts of logos based on this shape – so we’ve refined it to make it more iconic. You’ll notice there is no gable, chimney, or other details, simply an orthogonal shape with elegant proportions.
+    This house shape then forms the ‘enclosure’ in the logomarks of every project that is part of the foundation.
+  </AssetCard>
 
-We’re all about the home, so our logomark follows its form. As a structure with a pitched roof is commonly used to represent a house, there are vast amounts of logos based on this shape – so we’ve refined it to make it more iconic. You’ll notice there is no gable, chimney, or other details, simply an orthogonal shape with elegant proportions.
-This house shape then forms the ‘enclosure’ in the logomarks of every project that is part of the foundation.
+  <AssetCard
+    title="Foundation"
+    assetName="/assets/open-home-foundation/ohf-logo-anatomy-foundation.png"
+    class="basic"
+  >
+    In the case of the Open Home Foundation logomark, the house shape is supported by a rectangular platform with two solid dark blue “legs”, symbolizing its foundations (and our foundation!). This connection to the ground represents the stability and structure we aim to provide via our projects and principles.
+  </AssetCard>
 
-### Foundation
-
-In the case of the Open Home Foundation logomark, the house shape is supported by a rectangular platform with two solid dark blue “legs”, symbolizing its foundations (and our foundation!). This connection to the ground represents the stability and structure we aim to provide via our projects and principles.
-
-### Blue
-
-Blue feels stable and essential. A bright sky blue is joyful, clear, and free of clouds.
+  <AssetCard
+    title="Blue"
+    assetName="/assets/open-home-foundation/ohf-logo-anatomy-blue.png"
+    class="basic"
+  >
+    Blue feels stable and essential. A bright sky blue is joyful, clear, and free of clouds.
+  </AssetCard>
+</CardGrid>
 
 ## Logotype
 

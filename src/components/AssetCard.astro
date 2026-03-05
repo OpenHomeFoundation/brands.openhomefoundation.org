@@ -22,22 +22,22 @@ const { title, mode, svg, png, assetName, class: className } = Astro.props;
       <span set:html={title} />
     </p>
     <div class="body"><slot /></div>
-    <div class="button-container">
-      {
-        svg && (
-          <a href={svg} class="button" target="_blank">
-            SVG
-          </a>
-        )
-      }
-      {
-        png && (
-          <a href={png} class="button" target="_blank">
-            PNG
-          </a>
-        )
-      }
-    </div>
+    {
+      svg || png ? (
+        <div class="button-container">
+          {svg && (
+            <a href={svg} class="button" target="_blank">
+              SVG
+            </a>
+          )}
+          {png && (
+            <a href={png} class="button" target="_blank">
+              PNG
+            </a>
+          )}
+        </div>
+      ) : null
+    }
   </div>
 </article>
 
@@ -74,6 +74,13 @@ const { title, mode, svg, png, assetName, class: className } = Astro.props;
       justify-content: center;
       background-color: #fff;
       padding: calc(100% / 6);
+    }
+    .card-asset.basic {
+      padding: 0;
+      aspect-ratio: initial;
+    }
+    .card-asset.basic img {
+      max-height: 100% !important;
     }
     .card-asset img {
       margin: 0 auto;
