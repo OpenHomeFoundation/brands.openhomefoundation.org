@@ -122,3 +122,8 @@
 .sl-markdown-content > img {
   display: block;
 }
+
+/* IMG border-radius */
+img.rounded {
+  border-radius: 1rem;
+}

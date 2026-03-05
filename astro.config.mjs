@@ -98,7 +98,10 @@ export default defineConfig({
       sidebar: [
         {
           label: "Overview",
-          autogenerate: { directory: "overview" },
+          items: [
+            { label: "Introduction", link: "/" },
+            { label: "Brand architecture", link: "/overview/brand-architecture/" },
+          ],
         },
         {
           label: "Open Home Foundation",
