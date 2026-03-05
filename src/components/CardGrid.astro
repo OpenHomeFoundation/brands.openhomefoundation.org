@@ -27,6 +27,10 @@ const { stagger = false, cols = "" } = Astro.props;
         gap: 1.5rem;
       }
 
+      .card-grid.cols-1 {
+        grid-template-columns: 1fr;
+      }
+
       .card-grid.cols-3 {
         grid-template-columns: 1fr 1fr 1fr;
       }

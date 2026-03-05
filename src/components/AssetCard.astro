@@ -7,6 +7,7 @@ interface Props {
   assetName: string;
   class?: string;
   deprecated?: boolean;
+  hideBorder?: boolean;
 }
 
 const {
@@ -17,10 +18,11 @@ const {
   assetName,
   class: className,
   deprecated,
+  hideBorder,
 } = Astro.props;
 ---
 
-<article class="card sl-flex">
+<article class={`card sl-flex ${hideBorder ? "no-border" : ""}`}>
   <div
     class={`card-asset ${mode ? `card-asset--${mode}` : ""} ${className || ""}`}
   >
@@ -82,6 +84,9 @@ const {
       background-color: var(--sl-color-black);
       flex-direction: column;
     }
+    .card.no-border {
+      border: none;
+    }
     .card:nth-child(4n + 1) {
       --sl-card-border: var(--sl-color-orange);
       --sl-card-bg: var(--sl-color-orange-low);
@@ -107,6 +112,9 @@ const {
       background-color: #fff;
       padding: calc(100% / 6);
       position: relative;
+    }
+    .card-asset.no-bgc {
+      background-color: transparent;
     }
     .card-asset.basic {
       padding: 0;
