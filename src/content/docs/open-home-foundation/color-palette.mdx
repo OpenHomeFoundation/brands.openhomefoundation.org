@@ -3,6 +3,8 @@ title: Color palette
 ---
 
 import ColorPaletteGrid from "../../../components/ColorPaletteGrid.astro";
+import ColorCard from "../../../components/ColorCard.astro";
+import { OHF_COLORS } from "../../../lib/colors";
 
 Our color system helps convey a consistent brand identity while distinguishing various themes within the Open Home Foundation ecosystem. Consistent use of these colors will contribute to the cohesive and harmonious appearance of the Open Home Foundation brand across all relevant media.
 
@@ -15,7 +17,13 @@ HSL, RGB or HEX code for screen viewing
 
 Our primary palette is anchored by a signature blue, which serves as the dominant element in most brand applications. Supported by a foundation of neutrals, dark blue, and light grey, this balance keeps the look focused, technical, and uncomplicated.
 
-<ColorPaletteGrid />
+<div class="not-content" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; margin-block: 1.5rem;">
+  <ColorCard color={OHF_COLORS.ohf_light_blue} />
+  <ColorCard color={OHF_COLORS.ohf_dark_blue} />
+  <ColorCard color={OHF_COLORS.ohf_dark_grey} />
+  <ColorCard color={OHF_COLORS.ohf_light_grey} />
+  <ColorCard color={OHF_COLORS.ohf_grey} />
+</div>
 
 ### Application
 

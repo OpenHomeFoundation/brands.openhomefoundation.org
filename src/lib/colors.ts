@@ -9,18 +9,18 @@ interface PrintColor {
   CMYK: [number, number, number, number];
 }
 
-interface ColorEntry {
+export interface OHFColor {
   name: string;
   web: WebColor;
   print: PrintColor;
 }
 
 interface OHFColorPalette {
-  ohf_light_blue: ColorEntry;
-  ohf_dark_blue: ColorEntry;
-  ohf_dark_grey: ColorEntry;
-  ohf_light_grey: ColorEntry;
-  ohf_grey: ColorEntry;
+  ohf_light_blue: OHFColor;
+  ohf_dark_blue: OHFColor;
+  ohf_dark_grey: OHFColor;
+  ohf_light_grey: OHFColor;
+  ohf_grey: OHFColor;
 }
 
 export const OHF_COLORS: OHFColorPalette = {
